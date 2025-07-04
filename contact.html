@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohit Portfolio/ Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<style>
+body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f5f5f5;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 30px auto;
+        /* center the navbar horizontally */
+        padding: 0 20px;
+        /* spacing on both sides for mobile */
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        border-radius: 16px;
+        height: 60px;
+        padding: 10px 20px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-icons {
+        display: flex;
+        gap: 12px;
+    }
+
+    .icon-btn {
+        height: 50px;
+        font-size: 30px;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+        background: none;
+        transition: background 0.3s ease;
+    }
+
+    .icon-btn:hover {
+        background: #f2f2f2;
+    }
+
+    .navbar-right {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .hire-btn {
+        height: 50px;
+        font-size: 20px;
+        background: black;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .hire-btn:hover {
+        background: lightgreen;                
+    }
+
+        .icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #f3f3f3;
+    color: #000;
+    font-size: 24px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.icons a:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+.tooltip {
+        position: relative;
+    }
+
+    .tooltip::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #000;
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 14px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 10;
+    }
+
+    .tooltip:hover::after {
+        opacity: 1;
+    }
+
+    .contact-form-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-form-section .section-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.availability-badge {
+    background-color: #e0f7e9;
+    color: #007f3f;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.contact-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-subtext {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.form-row input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+}
+
+textarea {
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    resize: none;
+}
+
+.submit-btn {
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #333;
+}
+.contact-form-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-form-section .section-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.availability-badge {
+    background-color: #e0f7e9;
+    color: #007f3f;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.contact-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-subtext {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;    
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.form-row input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+}
+
+textarea {
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    resize: none;
+}
+
+.submit-btn {
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #333;
+}
+
+    .contact-section {
+        background: white;
+        margin: 40px auto;
+        padding: 40px 20px;
+        border-radius: 16px;
+        max-width: 900px;
+        text-align: center;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-section h2 {
+        font-size: 45px;
+        margin-bottom: 12px;
+    }
+
+    .contact-section p {
+        color: #555;
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+
+    .contact-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 30px;
+    }
+
+    .contact-buttons .hire-btn {
+        background: black;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .contact-buttons .copy-btn {
+        background: #f2f2f2;
+        border: none;
+        font-size: 20px;
+        border-radius: 8px;
+        padding: 10px 16px;
+        cursor: pointer;
+    }
+
+    .contact-buttons .copy-btn:hover {
+        background: #e0e0e0;
+    }
+
+    .social-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        justify-content: space-between;
+    }
+
+    .social-links span {
+        font-weight: 500;
+        font-size: 24px;
+    }
+
+    .social-links .icons {
+        display: flex;
+        gap: 16px;
+        font-size: 35px;
+        text-decoration: none;
+    }
+
+    .social-links .icons a {
+        color: white;
+        border-radius: 10px;
+        background-color: #000;
+        transition: color 0.3s;
+    }
+
+    .social-links .icons a:hover {
+        color: #555;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <header class="navbar">
+            <div class="navbar-icons">
+                <button class="icon-btn tooltip" data-tooltip="Home"><i class="ri-home-2-line"></i></button>
+                <button class="icon-btn tooltip" data-tooltip="About"><i class="ri-id-card-line"></i></button>
+                <button class="icon-btn tooltip" data-tooltip="Projects"><i class="ri-folder-4-line"></i></button>
+                <button class="icon-btn tooltip" data-tooltip="Contact"><i class="ri-contacts-line"></i></button>
+
+            </div>
+            <div class="navbar-right">
+
+                <button class="hire-btn">Hire Me</button>
+            </div>
+        </header>
+    </div>
+    
+    <section class="contact-form-section">
+    <h4 class="section-label">Hire Me</h4>
+    <span class="availability-badge">✅ AVAILABLE FOR WORK</span>
+    <h1 class="contact-heading">Let’s Build Something Great</h1>
+    <p class="contact-subtext">Have an idea or project in mind? I'm here to bring it to life with clean code and user-first design. Let’s connect!</p>
+
+    <form class="inquiry-form">
+        <div class="form-row">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email Address" required>
+        </div>
+        <textarea rows="5" placeholder="Message" required></textarea>
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</section>
+
+<section class="contact-section">
+        <h2>Let's work together.</h2>
+        <p>Creating user-friendly experiences with visually appealing design</p>
+
+        <div class="contact-buttons">
+            <button class="hire-btn">Hire Me</button>
+            <button class="copy-btn" onclick="copyEmail()">Copy Email</button>
+        </div>
+
+       <div class="social-links">
+            <span>Follow Me</span>
+            <div class="icons">
+                <a href="https://www.linkedin.com/in/mohit-yadav-31161633b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="ri-linkedin-fill"></i></a>
+                <a href="https://www.instagram.com/plusonreels?igsh=MTA0b2o2dGozb2g3Yg==" target="_blank"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-github-line"></i></a>
+            </div>
+        </div>
+    </section>
+
+</body>
+<script>
+// 1. Navigation icon click handlers
+        document.querySelector('.ri-home-2-line').addEventListener('click', () => {
+            window.location.href = 'MohitPortfolio.html';
+        });
+        document.querySelector('.ri-id-card-line').addEventListener('click', () => {
+            window.location.href = 'about.html';
+        });
+        document.querySelector('.ri-folder-4-line').addEventListener('click', () => {
+            window.location.href = 'projects.html';
+        });
+        document.querySelector('.ri-contacts-line').addEventListener('click', () => {
+            window.location.href = 'contact.html';
+        });
+
+        // 2. "Hire Me" button click - redirect to contact.html
+        document.querySelectorAll('.hire-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                window.location.href = 'contact.html';
+            });
+        });
+
+        // 3. "Copy Email" button functionality
+        document.querySelectorAll('.copy-email, .copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                navigator.clipboard.writeText('mohityadavsatoria23@gmail.com') // Replace with your email
+                    .then(() => {
+                        alert('Email copied to clipboard!');
+                    });
+            });
+        });
+
+
+</script>
+</html>
